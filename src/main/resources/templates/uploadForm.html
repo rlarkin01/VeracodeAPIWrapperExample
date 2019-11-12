@@ -1,0 +1,68 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<table>
+			<td>
+				<form method="POST" enctype="multipart/form-data" action="/">
+					<input type="hidden" name="appName" value="TC Java" />
+					<table>
+						<tr><th>TC Java</th></tr>
+						<tr><td>Name of Submission:</td><td><input type="text" name="submissionName" /></td></tr>
+						<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+						<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+					</table>
+				</form>
+			</td>
+			<td>
+				<form method="POST" enctype="multipart/form-data" action="/">
+					<input type="hidden" name="appName" value="TC JavaScript" />
+					<table>
+						<tr><th>TC JavaScript</th></tr>
+						<tr><td>Name of Submission:</td><td><input type="text" name="submissionName" /></td></tr>
+						<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+						<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+					</table>
+				</form>
+			</td>
+		</table>
+	</div>
+
+	<div>
+		<p>base project: <a url="https://spring.io/guides/gs/uploading-files/">https://spring.io/guides/gs/uploading-files/</a></p>
+	</div>
+
+	<div>
+		<h1>Uploaded Files</h1>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>
+
+	<div>
+		<h1>Veracode Reports</h1>
+		<ul>
+<!--			<li th:each="report : ${reports}">-->
+<!--				<a th:href="${report}" th:text="${report}" />-->
+<!--			</li>-->
+			<li>
+<!--				<a href="file:///Users/rlarkin/Documents/TopCoder/server_java/results-dir/DetailedReport_TC_JavaScript_25_Oct_2019.pdf">http://localhost:8080/reports/DetailedReport_TC_JavaScript_25_Oct_2019.pdf</a>-->
+				<p>http://localhost:8080/reports/DetailedReport_TC_JavaScript_25_Oct_2019.pdf</p>
+				<button type="submit" onclick="window.open('/Users/rlarkin/Documents/TopCoder/server_java/results-dir/DetailedReport_TC_JavaScript_25_Oct_2019.pdf')">Download!</button>
+			</li>
+			<li>
+<!--				<a href="file:///Users/rlarkin/Documents/TopCoder/server_java/results-dir/DetailedReport_TC_JavaScript_25_Oct_2019.pdf">http://localhost:8080/reports/DetailedReport_TC_Java_25_Oct_2019.pdf</a>-->
+				<p>http://localhost:8080/reports/DetailedReport_TC_Java_25_Oct_2019.pdf</p>
+				<button type="submit" onclick="window.open('/Users/rlarkin/Documents/TopCoder/server_java/results-dir/DetailedReport_TC_JavaScript_25_Oct_2019.pdf')">Download!</button>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
