@@ -12,10 +12,9 @@ import javax.xml.xpath.*;
 import java.io.IOException;
 import java.io.StringReader;
 
-class Veracode {
+import static hello.Credentials.*;
 
-    private static final String API_ID = "bcd5636b0f52448719c895d867d93447";
-    private static final String API_KEY = "04d7f1df1440b2c0012b242f410a30a0f9a1f97635fc22074109f94552e857876a23e938f6dfa2f17a66eb8e7c4ace20c3c1ee27246a619639ffbd9d34e51874";
+class Veracode {
 
     static String retrieveResults(String appName, String Sandbox) throws ParserConfigurationException, SAXException, XPathExpressionException, IOException {
         String appId = getApplicationId(appName);
